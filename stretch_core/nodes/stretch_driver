@@ -353,11 +353,11 @@ class StretchBodyNode:
     ######## CHANGE MODES #########
 
     def change_mode(self, new_mode, code_to_run):
-        self.robot_mode_rwlock.acquire_write()
+        # self.robot_mode_rwlock.acquire_write()
         self.robot_mode = new_mode
         code_to_run()
         rospy.loginfo('{0}: Changed to mode = {1}'.format(self.node_name, self.robot_mode))
-        self.robot_mode_rwlock.release_write()
+        # self.robot_mode_rwlock.release_write()
 
     # TODO : add a freewheel mode or something comparable for the mobile base?
 
